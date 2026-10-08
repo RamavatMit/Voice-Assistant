@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jarvis HUD</title>
+  <link rel="stylesheet" href="hud.css">
+</head>
+<body class="mode-compact state-starting">
+  <main id="app">
+    <div id="orbwrap" class="drag" title="Click: talk  ·  Double-click: resize">
+      <canvas id="orb"></canvas>
+      <div id="halo"></div>
+    </div>
+
+    <section id="side">
+      <header id="head" class="drag">
+        <div id="titles">
+          <div id="state">Starting</div>
+          <div id="detail">Loading voice models…</div>
+        </div>
+        <div id="winbtns">
+          <button id="btn-size" class="icon" title="Expand">
+            <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5"/></svg>
+          </button>
+          <button id="btn-orb" class="icon" title="Shrink to orb">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/></svg>
+          </button>
+          <button id="btn-close" class="icon" title="Quit Jarvis">
+            <svg viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div id="activity" title=""><span id="activity-text">Ready when you are.</span></div>
+
+      <form id="composer" autocomplete="off">
+        <input id="input" placeholder="Type a command…" spellcheck="false">
+        <button type="button" id="btn-talk" class="icon round" title="Talk (Ctrl+Alt+J)">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        </button>
+        <button type="submit" id="btn-send" class="icon round accent" title="Send (Enter)">
+          <svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2-6-8-2z"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <section id="more">
+      <div id="question" hidden>
+        <div id="qtext"></div>
+        <div id="qbtns">
+          <button id="btn-yes" class="pill yes">Yes</button>
+          <button id="btn-no" class="pill no">No</button>
+        </div>
+      </div>
+      <div id="feed"></div>
+      <footer id="toolbar">
+        <button id="btn-mic" class="tool" title="Microphone on/off">
+          <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/><path class="slash" d="M4 4l16 16"/></svg>
+          <span>Mic</span>
+        </button>
+        <button id="btn-voice" class="tool" title="Voice replies on/off">
+          <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6"/><path class="slash" d="M4 4l16 16"/></svg>
+          <span>Voice</span>
+        </button>
+        <button id="btn-stop" class="tool danger" title="Stop current task (Ctrl+Alt+X)">
+          <svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/></svg>
+          <span>Stop</span>
+        </button>
+        <div id="hint" title="Ctrl+Alt+J: talk  ·  Ctrl+Alt+X: stop">Ctrl+Alt+J / X</div>
+      </footer>
+    </section>
+  </main>
+  <script src="hud.js"></script>
+</body>
+</html>

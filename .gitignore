@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.pyc
+*.wav
+.vscode/
+.idea/
+*.png
+*.log
+browser_profile/
+jarvis_settings.json
+chrome_profile/
+voice_profile/
+.hud_cache/
+_backup_v1/

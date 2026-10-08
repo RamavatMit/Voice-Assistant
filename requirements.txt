@@ -1,0 +1,16 @@
+openai
+openwakeword
+scikit-learn
+sounddevice
+numpy
+python-dotenv
+pyautogui
+pyperclip
+pywin32
+comtypes
+psutil
+pillow
+playwright
+edge-tts
+miniaudio
+pywebview
